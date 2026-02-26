@@ -41,11 +41,14 @@ alias v = nvim
 alias vi = nvim
 alias bat = bat -p -P --color=always --theme="Dracula"
 alias anime = ani-cli --rofi --skip
-plugin add nu_plugin_gstat
+alias remove = yay -Rnus
+alias i = yay -S --needed
+alias editmonitor = helix ~/.config/niri/monitors.kdl
+alias editkbd = helix ~/.config/niri/input.kdl
 plugin use gstat
 fastfetch
-# mkdir ($nu.data-dir | path join "vendor/autoload")
-# starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
+mkdir ($nu.data-dir | path join "vendor/autoload")
+starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 def install [...pkgs: string] {
     if ($pkgs | is-empty) {
         let selection = (yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window 'down:65%:wrap' --bind 'alt-p:toggle-preview' --bind 'alt-b:change-preview:yay -Gpa {1} | tail -n +5')
@@ -67,6 +70,7 @@ def unpack [file: path, dest?: path] {
 }
 def to-env [keys: list<string>, values: list<string>] {
     $keys | zip $values | each {|it| 
-        $"($it.0)=($it.1)" 
+        $"($it.0)="($it.1)"" 
     } | save --append .env
 }
+source ./completions/gh-completions.nu

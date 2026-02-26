@@ -121,7 +121,7 @@ binds {
     Mod+V       { toggle-window-floating; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
-    Print { spawn-sh "screenshot-with-edit"; }
+    Print { spawn-sh "niri-screenshot-with-edit"; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 
