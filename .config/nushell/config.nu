@@ -40,7 +40,7 @@ alias q = exit
 alias v = nvim
 alias vi = nvim
 alias bat = bat -p -P --color=always --theme="Dracula"
-alias anime = ani-cli --rofi --skip
+alias anime = ani-cli --skip
 alias remove = yay -Rnus
 alias i = yay -S --needed
 alias editmonitor = helix ~/.config/niri/monitors.kdl
