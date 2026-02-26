@@ -50,13 +50,6 @@ export FZF_CTRL_R_OPTS="
   --header 'Press CTRL-Y to copy command into clipboard'"
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
-export FZF_DEFAULT_OPTS=" \
---color=bg+:#313244,bg:#1E1E2E,spinner:#F5E0DC,hl:#F38BA8 \
---color=fg:#CDD6F4,header:#F38BA8,info:#CBA6F7,pointer:#F5E0DC \
---color=marker:#B4BEFE,fg+:#CDD6F4,prompt:#CBA6F7,hl+:#F38BA8 \
---color=selected-bg:#45475A \
---color=border:#6C7086,label:#CDD6F4"
-
 export FZF_COMPLETION_PATH_OPTS="--walker file,dir,follow,hidden"
 export FZF_COMPLETION_DIR_OPTS="--walker dir,follow"
 
@@ -90,14 +83,15 @@ alias gclone="gh repo clone"
 alias repolist="gh repo list"
 alias gp="git pull"
 
-alias anime="ani-cli --rofi --skip"
+alias anime="ani-cli --skip"
 
-alias editbinds="helix ~/.config/hypr/keybinds.conf"
-alias editkbd="helix ~/.config/hypr/keyboard.conf"
-alias editmonitor="helix ~/.config/hypr/monitor.conf"
+alias editbinds="helix ~/.config/niri/keybinds.kdl"
+alias editkbd="helix ~/.config/niri/input.kdl"
+alias editmonitor="helix ~/.config/niri/monitors.kdl"
 
 # pacman
 alias i="yay -S"
+alias remove="yay -Rnsu"
 
 alias update="yay -Syu --noconfirm && yay -Yc"
 alias search="yay -Slq | fzf --multi --preview 'yay -Sii {1}'"
@@ -147,10 +141,6 @@ setopt hist_find_no_dups
 setopt correct
 setopt notify
 setopt numericglobsort
-
-remove() {
-  yay -Rns "$@" && yay -Yc
-}
 
 get() {
   if [[ -z "$1" ]]; then
