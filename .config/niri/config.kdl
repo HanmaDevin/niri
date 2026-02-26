@@ -5,6 +5,7 @@ include "autostart.kdl"
 include "keybinds.kdl"
 include "window_rules.kdl"
 include "env.kdl"
+include "layer_rules.kdl"
 
 hotkey-overlay {
     skip-at-startup

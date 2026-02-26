@@ -16,7 +16,6 @@ window-rule {
     // block-out-from "screencast"
 }
 
-
 window-rule {
     draw-border-with-background false
 }
@@ -32,7 +31,6 @@ window-rule {
 
     min-width 876
 }
-
 
 window-rule {
   // Rounded corners for a modern look.
