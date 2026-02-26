@@ -141,6 +141,7 @@ copy_config() {
   fi
 
   cp "${REPO}/.zshrc" "${HOME}"
+  cp "${REPO}/.zoxide.nu" "${HOME}"
   cp -r "${CFG_PATH}" "${HOME}"
   get_wallpaper
 

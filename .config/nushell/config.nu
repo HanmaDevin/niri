@@ -44,7 +44,9 @@ alias anime = ani-cli --rofi --skip
 alias remove = yay -Rnus
 alias i = yay -S --needed
 alias editmonitor = helix ~/.config/niri/monitors.kdl
+alias editkeys = helix ~/.config/niri/keybinds.kdl
 alias editkbd = helix ~/.config/niri/input.kdl
+plugin add nu_plugin_gstat
 plugin use gstat
 fastfetch
 mkdir ($nu.data-dir | path join "vendor/autoload")
@@ -74,3 +76,5 @@ def to-env [keys: list<string>, values: list<string>] {
     } | save --append .env
 }
 source ./completions/gh-completions.nu
+zoxide init --cmd cd nushell | save -f ~/.zoxide.nu
+source ~/.zoxide.nu
