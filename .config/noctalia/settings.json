@@ -330,7 +330,7 @@
         "dimmerOpacity": 0.2,
         "enableLockScreenCountdown": true,
         "enableShadows": true,
-        "forceBlackScreenCorners": false,
+        "forceBlackScreenCorners": true,
         "iRadiusRatio": 1,
         "keybinds": {
             "keyDown": [
@@ -372,7 +372,7 @@
         "shadowOffsetY": 3,
         "showChangelogOnStartup": true,
         "showHibernateOnLockScreen": false,
-        "showScreenCorners": false,
+        "showScreenCorners": true,
         "showSessionButtonsOnLockScreen": true,
         "telemetryEnabled": false
     },
@@ -601,7 +601,7 @@
         "networkPanelView": "wifi",
         "panelBackgroundOpacity": 0.93,
         "panelsAttachedToBar": true,
-        "settingsPanelMode": "attached",
+        "settingsPanelMode": "centered",
         "tooltipsEnabled": true,
         "wifiDetailsViewMode": "grid"
     },
