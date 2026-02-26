@@ -1,0 +1,16 @@
+output "eDP-1" {
+    scale 2
+    transform "normal"
+}
+
+output "HDMI-A-1" {
+    off
+}
+
+output "DP-1" {
+    mode "3840x2160@143.999"
+}
+
+xwayland-satellite {
+    path "xwayland-satellite"
+}

@@ -1,0 +1,9 @@
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "shift-enter": "editor::NewlineBelow",
+      "ctrl-shift-enter": "editor::NewlineAbove"
+    }
+  }
+]

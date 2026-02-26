@@ -1,0 +1,10 @@
+[GTK]
+application_prefer_dark_theme = true
+cursor_theme_name = "McMojave Cursors"
+
+[commands]
+reboot = [ "systemctl", "reboot" ]
+poweroff = [ "systemctl", "poweroff" ]
+
+[background]
+path = "/usr/share/backgrounds/.current_wallpaper"
