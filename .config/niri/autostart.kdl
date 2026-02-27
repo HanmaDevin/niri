@@ -1,7 +1,5 @@
 spawn-at-startup "vesktop"
 spawn-sh-at-startup "protonvpn-app --start-minimized"
-spawn-sh-at-startup "wl-paste --type text --watch cliphist store"
-spawn-sh-at-startup "wl-paste --type image --watch cliphist store"
 spawn-sh-at-startup "qs -c noctalia-shell --no-duplicate"
 spawn-sh-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-sh-at-startup "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
