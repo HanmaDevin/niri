@@ -4,4 +4,4 @@ spawn-sh-at-startup "qs -c noctalia-shell --no-duplicate"
 spawn-sh-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-sh-at-startup "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
 
-spawn-sh-at-startup "swayidle -w timeout 300 'qs -c noctalia-shell ipc call lockScreen lock' timeout 600 'niri msg action power-off-monitors'"
+spawn-sh-at-startup "swayidle timeout 540 'qs -c noctalia-shell ipc call lockScreen lock' timeout 600 'niri msg action power-off-monitors' resume 'niri msg action power-on-monitors'"

@@ -9,6 +9,16 @@ window-rule {
 }
 
 window-rule {
+    match app-id=r#"brave-browser"#
+    open-maximized true
+}
+
+window-rule {
+    match app-id=r#"vesktop"#
+    open-maximized false
+}
+
+window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
     block-out-from "screen-capture"
