@@ -30,7 +30,7 @@
         "cavaFrameRate": 30,
         "mprisBlacklist": [
         ],
-        "preferredPlayer": "",
+        "preferredPlayer": "showtime",
         "visualizerType": "linear",
         "volumeFeedback": false,
         "volumeOverdrive": false,
@@ -507,7 +507,7 @@
     },
     "sessionMenu": {
         "countdownDuration": 10000,
-        "enableCountdown": true,
+        "enableCountdown": false,
         "largeButtonsLayout": "single-row",
         "largeButtonsStyle": true,
         "position": "center",
