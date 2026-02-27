@@ -48,6 +48,32 @@ installAurPackages() {
   yay -S --needed --noconfirm "${packages[@]}"
 }
 
+setup_firewall() {
+  gum spin --spinner dot --title "Firewall Setup..." -- sleep 2
+  # Allow nothing in, everything out
+  sudo ufw default deny incoming
+  sudo ufw default allow outgoing
+
+  # Allow ports for LocalSend
+  sudo ufw allow 53317/udp
+  sudo ufw allow 53317/tcp
+
+  sudo ufw allow KDEConnect
+
+  # Allow Docker containers to use DNS on host
+  sudo ufw allow in proto udp from 172.16.0.0/12 to 172.17.0.1 port 53 comment 'allow-docker-dns'
+
+  # Turn on the firewall
+  sudo ufw --force enable
+
+  # Enable UFW systemd service to start on boot
+  sudo systemctl enable ufw
+
+  # Turn on Docker protections
+  sudo ufw-docker install
+  sudo ufw reload
+}
+
 installYay() {
   if ! command -v yay >/dev/null 2>&1; then
     cwd=$(pwd)
@@ -198,6 +224,7 @@ case ${ans} in
     detect_nvidia
     installDeepCoolDriver
     configure_git
+    setup_firewall
     "${REPO}/setup-fingerprint"
 
     sudo systemctl enable sddm
