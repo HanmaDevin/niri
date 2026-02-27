@@ -32,10 +32,8 @@ installExtensions() {
 }
 
 installNiri() {
-  local packages=("niri" "gnome-system-monitor" "nushell" "libreoffice" "mpv-mpris" "bluez" "bluez-utils" "networkmanager" "brightnessctl" "wine" "bluez-obex" "sddm" "qt6ct-kde" "qt5ct-kde" "qt6-svg" "qt6-virtualkeyboard" "qt6-multimedia-ffmpeg" "network-manager-applet" "networkmanager-openvpn" "ufw" "grub" "os-prober" "kitty" "ntfs-3g" "reflector" "polkit-gnome" "btop" "plymouth" "gamemode" "pipewire" "pipewire-pulse" "pipewire-alsa" "pipewire-jack" "ttf-font-awesome" "ttf-nerd-fonts-symbols" "ttf-jetbrains-mono-nerd" "noto-fonts-emoji" "wireplumber" "libfido2" "qt5-wayland" "qt6-wayland" "gamescope" "pam-u2f" "gnome-keyring" "xdg-desktop-portal-gtk" "nm-connection-editor" "wlsunset" "cliphist" "cava" "wl-clipboard" "xdg-desktop-portal-wlr" "qt5-quickcontrols" "qt5-quickcontrols2" "qt5-graphicaleffects" "pacman-contrib" "libimobiledevice" "usbmuxd" "gvfs-gphoto2" "ifuse" "grim" "slurp" "steam" "helix" "satty" "adw-gtk-theme" "file-roller" "vulkan-headers" "nautilus" "papers" "loupe" "showtime" "impression" "power-profiles-daemon" "texlive")
-  for pkg in "${packages[@]}"; do
-    sudo pacman -S --needed --noconfirm "${pkg}"
-  done
+  local packages=("niri" "gnome-system-monitor" "nushell" "libreoffice" "mpv-mpris" "bluez" "bluez-utils" "networkmanager" "brightnessctl" "wine" "bluez-obex" "sddm" "qt6-svg" "qt6-virtualkeyboard" "qt6-multimedia-ffmpeg" "network-manager-applet" "networkmanager-openvpn" "ufw" "grub" "os-prober" "kitty" "ntfs-3g" "reflector" "polkit-gnome" "btop" "plymouth" "gamemode" "pipewire" "pipewire-pulse" "pipewire-alsa" "pipewire-jack" "ttf-font-awesome" "ttf-nerd-fonts-symbols" "ttf-jetbrains-mono-nerd" "noto-fonts-emoji" "wireplumber" "libfido2" "qt5-wayland" "qt6-wayland" "gamescope" "pam-u2f" "gnome-keyring" "xdg-desktop-portal-gtk" "nm-connection-editor" "wlsunset" "cliphist" "cava" "wl-clipboard" "xdg-desktop-portal-wlr" "qt5-quickcontrols" "qt5-quickcontrols2" "qt5-graphicaleffects" "pacman-contrib" "libimobiledevice" "usbmuxd" "gvfs-gphoto2" "ifuse" "grim" "slurp" "steam" "helix" "satty" "adw-gtk-theme" "file-roller" "vulkan-headers" "nautilus" "papers" "loupe" "showtime" "impression" "power-profiles-daemon" "texlive")
+  sudo pacman -S --needed --noconfirm "${packages[@]}"
 }
 
 installTerminalTools() {
@@ -46,7 +44,7 @@ installTerminalTools() {
 }
 
 installAurPackages() {
-  local packages=("nb" "noctalia-shell" "spotify" "gpu-gpu-screen-recorder" "brave-bin" "vscodium-bin" "xpadneo-dkms" "nwg-look" "openvpn3" "xwayland-satellite" "localsend-bin" "pinta" "lazydocker" "ufw-docker" "qt-heif-image-plugin" "tte" "luajit-tiktoken-bin" "ani-cli" "ani-skip-git" "vesktop" "proton-vpn-gtk-app")
+  local packages=("nb" "noctalia-shell" "spotify" "brave-bin" "vscodium-bin" "xpadneo-dkms" "nwg-look" "openvpn3" "xwayland-satellite" "localsend-bin" "qt6ct-kde" "qt5ct-kde" "pinta" "lazydocker" "ufw-docker" "qt-heif-image-plugin" "tte" "luajit-tiktoken-bin" "ani-cli" "ani-skip-git" "vesktop" "proton-vpn-gtk-app")
   yay -S --needed --noconfirm "${packages[@]}"
 }
 
@@ -91,7 +89,7 @@ configure_git() {
 
 set_shell() {
   local shell
-  shell=$(gum choose "Nu" "Zsh" " Fish")
+  shell=$(gum choose "Nu" "Zsh" "Fish")
   case "${shell,,}" in
     "zsh")
       sudo pacman -S --needed --noconfirm "zsh"
@@ -102,7 +100,7 @@ set_shell() {
   esac
 
   echo ">>> Trying to change the shell to: ${shell,,}"
-  chsh -s "$(which "${shell,,}")"
+  chsh -s "/usr/bin/${shell,,}"
 }
 
 detect_nvidia() {
