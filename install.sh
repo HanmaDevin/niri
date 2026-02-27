@@ -118,13 +118,13 @@ detect_nvidia() {
 
 get_wallpaper() {
   if gum confirm ">>> Do you want to download cool wallpaper?"; then
-    if [ ! -d "${HOME}/Pictures/Wallpaper" ]; then
-      mkdir -p "${HOME}/Pictures/Wallpaper"
+    if [ ! -d "${HOME}/Pictures/Wallpapers" ]; then
+      mkdir -p "${HOME}/Pictures/Wallpapers"
     fi
     git clone "https://github.com/HanmaDevin/Wallpapes.git" "${HOME}/Wallpapes"
-    cp ~/Wallpapes/* "${HOME}/Pictures/Wallpaper"
+    cp ~/Wallpapes/* "${HOME}/Pictures/Wallpapers"
     rm -rf "${HOME}/Wallpapes"
-    rm -rf "${HOME}/Pictures/Wallpaper/.git"
+    rm -rf "${HOME}/Pictures/Wallpapers/.git"
   fi
 }
 
