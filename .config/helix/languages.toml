@@ -49,3 +49,7 @@ name = "python"
 formatter = { command = "black", args = ["-"] }
 auto-format = true 
 
+[[language]]
+name = "nu"
+formatter = { command = "nufmt", args = ["--stdin"]}
+auto-format = true
