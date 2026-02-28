@@ -35,6 +35,8 @@ alias gclone = gh repo clone
 alias repolist = gh repo list
 alias hx = helix
 alias la = ls -a
+alias oldcd = ^cd
+alias cd = z
 alias lg = lazygit
 alias q = exit
 alias v = nvim
@@ -76,5 +78,5 @@ def to-env [keys: list<string>, values: list<string>] {
     } | save --append .env
 }
 source ./completions/gh-completions.nu
-zoxide init --cmd cd nushell | save -f ~/.zoxide.nu
-source ~/.zoxide.nu
+zoxide init nushell | save -f ~/.zoxide.nu
+if ("~/.zoxide.nu" | path exists) { source ~/.zoxide.nu }
