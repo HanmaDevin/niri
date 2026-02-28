@@ -445,7 +445,7 @@
         "bluetoothRssiPollingEnabled": false,
         "disableDiscoverability": false,
         "wifiDetailsViewMode": "grid",
-        "wifiEnabled": false
+        "wifiEnabled": true
     },
     "nightLight": {
         "autoSchedule": true,
