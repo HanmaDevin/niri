@@ -15,6 +15,7 @@ binds {
     Mod+E hotkey-overlay-title="File Manager" { spawn "nautilus"; }
     Mod+Delete hotkey-overlay-title="Open Logout Menu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
     Mod+B hotkey-overlay-title="Open Browser: Brave" { spawn "brave"; }
+    Mod+Tab hotkey-overlay-title="Search Windows" { spawn-sh "qs -c noctalia-shell ipc call launcher windows"; }
 
     // Audio & Brightness
     XF86AudioRaiseVolume { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "increase"; }
