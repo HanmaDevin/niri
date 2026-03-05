@@ -85,9 +85,9 @@ alias gp="git pull"
 
 alias anime="ani-cli --skip"
 
-alias editbinds="helix ~/.config/niri/keybinds.kdl"
-alias editkbd="helix ~/.config/niri/input.kdl"
-alias editmonitor="helix ~/.config/niri/monitors.kdl"
+alias editbinds="zeditor ~/.config/niri/keybinds.kdl"
+alias editkbd="zeditor ~/.config/niri/input.kdl"
+alias editmonitor="zeditor ~/.config/niri/monitors.kdl"
 
 # pacman
 alias i="yay -S"
@@ -103,8 +103,9 @@ alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
 alias hx="helix"
+alias zed="zeditor"
 
-alias editzsh="helix ~/.zshrc"
+alias editzsh="zeditor ~/.zshrc"
 alias lg="lazygit"
 
 alias rm="rm -I"
@@ -117,13 +118,13 @@ alias q="exit"
 alias ..='z ..'
 
 # you may also use the following one
-bindkey -s '^o' 'helix $(fzf)\n'
+bindkey -s '^o' 'zeditor $(fzf)\n'
 
 # Always mkdir a path (this doesn't inhibit functionality to make a single dir)
 alias mkdir='mkdir -p'
 
-export EDITOR="helix"
-export VISUAL="helix"
+export EDITOR="zeditor"
+export VISUAL="zeditor"
 
 # History
 HISTSIZE=5000

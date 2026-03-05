@@ -25,5 +25,5 @@ input {
 
 cursor {
     xcursor-theme "McMojave Cursors"
-    xcursor-size 32
+    xcursor-size 48
 }

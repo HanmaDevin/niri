@@ -216,6 +216,8 @@ EOF
 
 echo "HanmaDevin Niri Setup"
 echo -e "${NONE}"
+echo ">>> Updating System..."
+sudo pacman -Syu gum
 ans=$(echo -en "[1] Install Niri\n[2] Install Packages\n[3] Apply Configurations\n[4] Exit" | gum table -c "What do you wish to do?")
 case ${ans} in
   *1*)
@@ -250,6 +252,8 @@ case ${ans} in
   *2*)
     installNiri
     installAurPackages
+    installTerminalTools
+    installDevTools
     ;;
   *3*)
     copy_config
