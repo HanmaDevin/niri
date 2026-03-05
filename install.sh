@@ -29,7 +29,6 @@ installDevTools() {
 
   rustup default stable
 }
-echo alksdj
 
 installExtensions() {
   if ! command -v codium >/dev/null 2>&1; then
