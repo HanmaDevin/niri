@@ -241,7 +241,7 @@ case ${ans} in
     installDeepCoolDriver
     configure_git
     setup_firewall
-    "${REPO}/setup-fingerprint"
+    bash "${REPO}/setup-fingerprint"
 
     sudo systemctl enable sddm
     sudo systemctl enable reflector
